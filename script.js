@@ -21,6 +21,12 @@ userInterface.setPrompt(chalk.blue('User: '))
 userInterface.prompt()
 
 userInterface.on('line', async (input) => {
+  // exit prompt
+  if (input === 'exit' || input === 'quit' || input === 'q' || input === 'e') {
+    userInterface.close()
+    return
+  }
+
   const res = await openai.createChatCompletion({
     // models: 'gpt-3.5-turbo', 'gpt-4'
     model: 'gpt-3.5-turbo',

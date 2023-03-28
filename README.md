@@ -21,4 +21,4 @@ API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 - run `npm run dev` to start the chatbot
 - ask the chatbot a question
-- type `ctrl+c` to exit the chatbot
+- type one of the following to exit the chatbot: `exit`, `quit`, `e`, `q`
