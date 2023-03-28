@@ -3,6 +3,7 @@ config()
 
 import { Configuration, OpenAIApi } from 'openai'
 import readline from 'readline'
+import chalk from 'chalk'
 
 const openai = new OpenAIApi(
   new Configuration({
@@ -16,7 +17,7 @@ const userInterface = readline.createInterface({
 })
 
 // Ask the user for input with this text "User: "
-userInterface.setPrompt('User: ')
+userInterface.setPrompt(chalk.blue('User: '))
 userInterface.prompt()
 
 userInterface.on('line', async (input) => {
@@ -31,6 +32,9 @@ userInterface.on('line', async (input) => {
       },
     ],
   })
-  console.log('Assistant: ', res.data.choices[0].message.content)
+  console.log(
+    chalk.magenta('Assistant: '),
+    chalk.green(res.data.choices[0].message.content)
+  )
   userInterface.prompt()
 })
