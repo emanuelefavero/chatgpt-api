@@ -8,5 +8,9 @@
   },
   "keywords": [],
   "author": "Emanuele Favero",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1"
+  }
 }
